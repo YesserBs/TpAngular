@@ -1,0 +1,38 @@
+<div id="main-ctr">
+    <h1>Liste des produits</h1>
+
+    <div id="search-bar">
+        <div (click)="searchProduct()" id="searchButton">
+            Rechercher
+        </div>
+        <input [(ngModel)]="recherche" (ngModelChange)="searchProduct()" id="search-input" type="text" placeholder="Rechercher un produit">
+    </div>
+
+    <div id="imgButton" (click)="toggleImg()">
+        Show img
+    </div>
+    <table width="40%">
+        <tr>
+            <th *ngIf="showImg">Image</th>
+            <td><b>Nom</b></td>
+            <td><b>Prix</b></td>
+            <td><b>Quantité</b></td>
+        </tr>
+        <tr [ngStyle]="{color: product.quantite>0 ? 'black' : 'red'}" *ngFor="let product of filtredProduits">
+            <td *ngIf="showImg">
+                <!-- <div id="main-img-ctr"> -->
+                    <div id="img-ctr">
+                        <img id="product-img" [src]="product.image" height="45px">
+                    </div>
+                <!-- </div> -->
+            </td>
+            <td>{{product.nom}}</td>
+            <td>{{product.prix}}</td>
+            <td *ngIf="product.quantite>0;else horsStock">{{product.quantite}}</td>
+            <ng-template #horsStock>
+                <td style="color: red;">Hors stock</td>
+            </ng-template>
+        </tr>
+    </table>
+
+</div>
