@@ -2,14 +2,15 @@
     <h1>Liste des produits</h1>
 
     <div id="search-bar">
-        <div (click)="searchProduct()" id="searchButton">
-            Rechercher
+        <div id="searchButton">
+            Mots clés
         </div>
         <input [(ngModel)]="recherche" (ngModelChange)="searchProduct()" id="search-input" type="text" placeholder="Rechercher un produit">
     </div>
 
     <div id="imgButton" (click)="toggleImg()">
-        Show img
+        <span *ngIf="showImg">Masquer</span>
+        <span *ngIf="!showImg">Montrer</span>
     </div>
     <table width="40%">
         <tr>
