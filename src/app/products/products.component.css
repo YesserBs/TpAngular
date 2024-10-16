@@ -68,3 +68,17 @@ table {
 tr {
     height: 50px;
 }
+
+td {
+    text-align: start;
+    width: 150px;
+}
+
+#table-line {
+    height: 0px;
+}
+
+hr {
+    margin-bottom: 18px;
+    border:  1px solid rgb(89, 89, 89);
+}

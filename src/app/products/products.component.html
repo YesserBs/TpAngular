@@ -12,20 +12,19 @@
         <span *ngIf="showImg">Masquer</span>
         <span *ngIf="!showImg">Montrer</span>
     </div>
-    <table width="40%">
+    <table>
         <tr>
-            <th *ngIf="showImg">Image</th>
+            <td *ngIf="showImg"><b>Image</b></td>
             <td><b>Nom</b></td>
             <td><b>Prix</b></td>
             <td><b>Quantité</b></td>
         </tr>
+        <tr id="table-line">
+            <td colspan="4"><hr></td>
+        </tr>
         <tr [ngStyle]="{color: product.quantite>0 ? 'black' : 'red'}" *ngFor="let product of filtredProduits">
             <td *ngIf="showImg">
-                <!-- <div id="main-img-ctr"> -->
-                    <div id="img-ctr">
-                        <img id="product-img" [src]="product.image" height="45px">
-                    </div>
-                <!-- </div> -->
+                <img id="product-img" [src]="product.image" width="25%">
             </td>
             <td>{{product.nom}}</td>
             <td>{{product.prix}}</td>
@@ -35,5 +34,4 @@
             </ng-template>
         </tr>
     </table>
-
 </div>
