@@ -5,11 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ProductsComponent } from './products/products.component';
+import { CreateProductComponent } from './create-product/create-product.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductsComponent
+    ProductsComponent,
+    CreateProductComponent,
+    NotFoundComponent,
+    UpdateProductComponent,
   ],
   imports: [
     BrowserModule,

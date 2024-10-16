@@ -55,11 +55,23 @@ table {
     cursor: pointer;
 }
 
+#addButton {
+    border: 2px solid rgb(34, 34, 34);
+    color: rgb(34, 34, 34);
+    padding: 8px 0px;
+    width: 150px;
+    margin: 20px 0px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
 #search-input {
     padding: 10px;
     width: 40%;
     margin: 20px 0px;
-    margin-left: 5px;
+    margin: 0px 5px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -67,6 +79,7 @@ table {
 
 tr {
     height: 50px;
+    cursor: pointer;
 }
 
 td {
