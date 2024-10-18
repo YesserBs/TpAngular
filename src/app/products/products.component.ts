@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Produit } from '../models/produit';
 import { Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
