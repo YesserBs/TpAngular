@@ -6,6 +6,9 @@
             Mots clés
         </div>
         <input [(ngModel)]="recherche" (ngModelChange)="searchProduct()" id="search-input" type="text" placeholder="Rechercher un produit">
+        <div id="createButton" (click)="goToCreate()">
+            Ajouter produit
+        </div>
     </div>
 
     <div id="imgButton" (click)="toggleImg()">
@@ -22,7 +25,7 @@
         <tr id="table-line">
             <td colspan="4"><hr></td>
         </tr>
-        <tr [ngStyle]="{color: product.quantite>0 ? 'black' : 'red'}" *ngFor="let product of filtredProduits">
+        <tr [ngStyle]="{color: product.quantite>0 ? 'black' : 'red'}" *ngFor="let product of filtredProduits" (click)="goToDetails(product.id)">
             <td *ngIf="showImg">
                 <img id="product-img" [src]="product.image" width="25%">
             </td>

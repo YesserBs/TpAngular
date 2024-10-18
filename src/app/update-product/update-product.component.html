@@ -1,0 +1,11 @@
+<p>Update the product number: {{product.id}}</p>
+<label>Nom: </label>
+<input [(ngModel)]="product.nom" [value]="product.nom"><br>
+<label>Prix: </label>
+<input [(ngModel)]="product.prix" [value]="product.prix"><br>
+<label>Quantité: </label>
+<input [(ngModel)]="product.quantite" [value]="product.quantite"><br>
+<label>Image: </label>
+<input [(ngModel)]="product.image" [value]="product.image"><br>
+
+<button (click)="updateProduct()">Update</button>
