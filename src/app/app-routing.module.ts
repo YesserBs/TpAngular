@@ -4,10 +4,15 @@ import { ProductsComponent } from './products/products.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { CreateProductComponent } from './create-product/create-product.component';
+import { AcceuilComponent } from './acceuil/acceuil.component';
 
 const routes: Routes = [
   {
     'path': '',
+    component: AcceuilComponent
+  },
+  {
+    'path': 'products',
     component: ProductsComponent
   },
   {

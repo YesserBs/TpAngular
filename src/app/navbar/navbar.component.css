@@ -1,0 +1,25 @@
+
+#main-ctr {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(233, 233, 233);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#center-ctr {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navigate {
+    padding-right: 40px;
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    cursor: pointer;
+}
+

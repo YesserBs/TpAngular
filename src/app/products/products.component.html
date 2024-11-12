@@ -24,15 +24,16 @@
             <td><b>Quantité</b></td>
         </tr>
         <tr id="table-line">
-            <td colspan="4"><hr></td>
+            <td colspan="5"><hr></td>
         </tr>
-        <tr [ngStyle]="{color: product.quantite>0 ? 'black' : 'red'}" *ngFor="let product of filtredProduits" (click)="goToDetails(product.id)">
+        <tr [ngStyle]="{color: product.quantite>0 ? 'black' : 'red'}" *ngFor="let product of filtredProduits">
             <td *ngIf="showImg">
                 <img id="product-img" [src]="product.image" width="25%">
             </td>
-            <td>{{product.nom}}</td>
+            <td (click)="goToDetails(product.id)">{{product.nom}}</td>
             <td>{{product.prix}}</td>
             <td *ngIf="product.quantite>0;else horsStock">{{product.quantite}}</td>
+            <td><a class="supr" (click)="showConfirmation(product.id)">supprimer</a></td>
             <ng-template #horsStock>
                 <td style="color: red;">Hors stock</td>
             </ng-template>

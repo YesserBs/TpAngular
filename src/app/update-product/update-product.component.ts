@@ -1,3 +1,4 @@
+// update-product.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Produit } from '../models/produit';
@@ -25,13 +26,18 @@ export class UpdateProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.productId = this.route.snapshot.paramMap.get('id');
-    const result = this.productService.getProductById(Number(this.productId));
-    if (result){
-      this.product = result;
+    if (this.productId) {
+      this.productService.getProductById(Number(this.productId)).subscribe(result => {
+        this.product = result;
+      });
     }
   }
 
   updateProduct() {
-    this.productService.updateProduct(this.product);
+    if (this.product) {
+      this.productService.updateProduct(this.product).subscribe(() => {
+        console.log('Produit mis à jour avec succès');
+      });
+    }
   }
 }
