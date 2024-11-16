@@ -45,29 +45,10 @@ export class ProductsComponent {
     this.showImg = !this.showImg;
   }
 
-  // searchProduct() {
-  //   this.filtredProduits = this.produits.filter(produit =>
-  //     produit.nom.toLowerCase().includes(this.recherche.toLowerCase())
-  //   );
-  // }
+  searchProduct() {}
 
-  searchProduct() {
-    this.filtredProduits = this.produits.filter(produit =>
-      produit.nom.toLowerCase().includes(this.recherche.toLowerCase())
-    );
 
-    // //Ou bien
-    // for (let i = 0; i < this.produits.length; i++) {
-    //   if (this.produits[i].nom.toLowerCase().includes(this.recherche.toLowerCase())) {
-    //     this.filtredProduits.push(this.produits[i]);
-    //   }
-    // }
-
-  }
-
-  goAddProduct() {
-    this.router.navigate(['/create']);
-  }
+  goAddProduct() {}
 
   goToEdit(id:number | null) {
     this.router.navigate(['/edit', id]);

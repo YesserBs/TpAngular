@@ -26,16 +26,13 @@
         <tr id="table-line">
             <td colspan="4"><hr></td>
         </tr>
-        <tr [ngStyle]="{color: product.quantite>0 ? 'black' : 'red'}" *ngFor="let product of filtredProduits" (click)="goToEdit(product.id)">
+        <tr *ngFor="let product of filtredProduits" (click)="goToEdit(product.id)">
             <td *ngIf="showImg">
                 <img id="product-img" [src]="product.image" width="25%">
             </td>
             <td>{{product.nom}}</td>
             <td>{{product.prix}}</td>
-            <td *ngIf="product.quantite>0;else horsStock">{{product.quantite}}</td>
-            <ng-template #horsStock>
-                <td style="color: red;">Hors stock</td>
-            </ng-template>
+            <td>{{product.quantite}}</td>
         </tr>
     </table>
 </div>
