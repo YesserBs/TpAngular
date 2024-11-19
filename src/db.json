@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "nom": "Smartphone",
+      "prix": 200,
+      "image": "assets/logoApple.png",
+      "quantite": 0
+    },
+    {
+      "id": "2",
+      "nom": "Tablette",
+      "prix": 400,
+      "image": "assets/logoApple.png",
+      "quantite": 4
+    },
+    {
+      "id": "3",
+      "nom": "Ordinateur",
+      "prix": "550",
+      "image": "assets/logoApple.png",
+      "quantite": 0
+    },
+    {
+      "id": "4",
+      "nom": "Tablette",
+      "prix": 400,
+      "image": "assets/logoApple.png",
+      "quantite": 4
+    }
+  ]
+}

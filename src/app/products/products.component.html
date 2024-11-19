@@ -24,15 +24,24 @@
             <td><b>Quantité</b></td>
         </tr>
         <tr id="table-line">
-            <td colspan="4"><hr></td>
+            <td colspan="5"><hr></td>
         </tr>
-        <tr *ngFor="let product of filtredProduits" (click)="goToEdit(product.id)">
-            <td *ngIf="showImg">
+        <tr *ngFor="let product of filtredProduits" [ngStyle]="{color: product.quantite>0 ? 'black' : 'red'}">
+            <td *ngIf="showImg" (click)="goToEdit(product.id)">
                 <img id="product-img" [src]="product.image" width="25%">
             </td>
-            <td>{{product.nom}}</td>
-            <td>{{product.prix}}</td>
-            <td>{{product.quantite}}</td>
+            <td (click)="goToEdit(product.id)">{{product.nom}}</td>
+            <td (click)="goToEdit(product.id)">{{product.prix}}</td>
+            <td (click)="goToEdit(product.id)" *ngIf="product.quantite>0; else Example">{{product.quantite}}</td>
+            <td (click)="deleteById(product.id!)" style="color: grey;">
+                supprimer
+            </td>
         </tr>
     </table>
 </div>
+
+<ng-template #Example >
+    <td>
+        Hors stock
+    </td>
+</ng-template>

@@ -6,12 +6,17 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './update-product.component.html',
   styleUrls: ['./update-product.component.css']
 })
-export class UpdateProductComponent {
+export class UpdateProductComponent implements OnInit {
   productId: string | null = '';
 
   constructor(
     private route: ActivatedRoute
   ) { }
 
+  ngOnInit() {
+    this.productId = this.route.snapshot.paramMap.get('id');
+  }
+
+  
 
 }
