@@ -12,7 +12,7 @@ import { ProductService } from '../services/product.service';
 export class UpdateProductComponent implements OnInit {
   productId: string | null = '';
   product: Produit = {
-    id: 0,
+    id: "0",
     nom: '',
     prix: 0,
     image: '',

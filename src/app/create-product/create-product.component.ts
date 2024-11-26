@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Produit } from '../models/produit';
 import { ProductService } from '../services/product.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-create-product',
@@ -8,9 +9,9 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./create-product.component.css']
 })
 export class CreateProductComponent {
-  productId: string | null = '';
+  productId: string | null = null;
   product: Produit = {
-    id: 0,
+    id: null,
     nom: '',
     prix: 0,
     image: '',
@@ -18,17 +19,20 @@ export class CreateProductComponent {
   };
 
   constructor(
-    private productService: ProductService
+    private productService: ProductService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
+    this.productId = this.route.snapshot.paramMap.get('newId');
+    if (this.productId) {
+      this.product.id = this.productId;
+    }
   }
 
   createProduct() {
-    if (this.product) {
       this.productService.addProduct(this.product).subscribe(() => {
-        console.log('Produit crée' + this.product.nom);
+        console.log('Produit créé : ' + this.product.nom);
       });
-    }
   }
 }

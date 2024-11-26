@@ -14,6 +14,7 @@ export class ProductService {
   ) { }
 
   getProducts() {
+    console.log('Getting products');
     return this.http.get<Produit[]>(`${this.baseUrl}/products`);
   }
 
@@ -29,8 +30,10 @@ export class ProductService {
     return this.http.put<Produit>(`${this.baseUrl}/products/${product?.id}`, product);
   }
   
-  deleteProduct(id: number | null) {
-    return this.http.delete(`${this.baseUrl}/products/${id}`);
+  deleteProduct(id: string | null) {
+    console.log('Deleting product');
+    console.log(`EXEMPLE: ${this.baseUrl}/products/${id}`);
+    return this.http.delete(`${this.baseUrl}/products/${id!}`);
   }
     
 }
